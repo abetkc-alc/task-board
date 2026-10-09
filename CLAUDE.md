@@ -8,7 +8,7 @@ task-board：タスク管理ボードのアプリ。
 
 - 技術スタック：React 19 + Vite（JavaScript / JSX）
 - 主要ファイル：`src/App.jsx`（画面とロジック）、`src/App.css`（スタイル）
-- タスクはメモリ上の state で管理（リロードで消える）
+- タスクは state で管理し、localStorage（キー：`tasks`）に保存してリロード後も保持する
 
 ## コマンド
 

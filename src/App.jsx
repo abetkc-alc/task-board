@@ -1,8 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+const STORAGE_KEY = 'tasks'
+
+// localStorage から保存済みのタスクを読み込む（読めない・壊れている場合は空にする）
+const loadTasks = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    return saved ? JSON.parse(saved) : []
+  } catch {
+    return []
+  }
+}
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(loadTasks)
   const [text, setText] = useState('')
+
+  // タスクが変わるたびに localStorage に保存する
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+    } catch {
+      // 保存できない環境（プライベートモードなど）では何もしない
+    }
+  }, [tasks])
 
   // タスクを追加する（空白だけの入力は無視）
   const addTask = (e) => {
