@@ -16,6 +16,12 @@ task-board：タスク管理ボードのアプリ。
 - `npm run dev` — 開発サーバー起動
 - `npm run build` — 本番ビルド（`dist/` に出力）
 
+## 公開（GitHub Pages）
+
+- URL：https://abetkc-alc.github.io/task-board/
+- `main` にプッシュすると `.github/workflows/deploy.yml` が自動でビルド・公開する
+- `vite.config.js` の `base: '/task-board/'` はリポジトリ名に合わせているので、リポジトリ名を変えたらここも変える
+
 ## Git運用ルール
 
 - **コードを変更するたびに、コミットして GitHub にプッシュする。**
