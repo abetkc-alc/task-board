@@ -6,7 +6,15 @@
 
 task-board：タスク管理ボードのアプリ。
 
-<!-- 技術スタック・ディレクトリ構成・起動方法などが決まったら追記する -->
+- 技術スタック：React 19 + Vite（JavaScript / JSX）
+- 主要ファイル：`src/App.jsx`（画面とロジック）、`src/App.css`（スタイル）
+- タスクはメモリ上の state で管理（リロードで消える）
+
+## コマンド
+
+- `npm install` — 依存関係のインストール
+- `npm run dev` — 開発サーバー起動
+- `npm run build` — 本番ビルド（`dist/` に出力）
 
 ## Git運用ルール
 
